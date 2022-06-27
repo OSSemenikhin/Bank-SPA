@@ -1,0 +1,386 @@
+@import "variables";
+@import "fonts";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.container {
+  max-width: 1330px;
+  width: 90%;
+  margin: auto;
+
+  // @media(max-width: 459px) {}
+  // @media(max-width: 575px) {}
+  // @media(max-width: 767px) {}
+  // @media(max-width: 959px) {}
+  // @media(max-width: 1199px) {}
+  // @media(max-width: 1399px) {}
+}
+
+body {
+  font-family: "Ubuntu";
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+}
+
+.content {
+  position: relative;
+  padding: 44px 0;
+}
+
+.title {
+  margin-bottom: 30px;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 40px;
+
+  @media (max-width: 575px) {
+    font-size: 28px;
+  }
+}
+
+.subtitle {
+  margin-bottom: 25px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: -0.02em;
+
+  @media (max-width: 575px) {
+    font-size: 18px;
+  }
+}
+
+.input {
+  padding: 8px 10px 8px 16px;
+  background: $colorLight;
+  border: 1px solid $colorGrey_5;
+  border-radius: 7px;
+
+  &._error {
+    border-color: $colorWrong;
+  }
+}
+
+.button {
+  background-color: $colorLight;
+  border: 2px solid $colorPrimary;
+  color: $colorPrimary;
+
+  &:hover {
+    background-color: $colorPrimary_opacity_2;
+  }
+
+  &:active {
+    background-color: $colorPrimary_opacity_3;
+  }
+}
+
+.button-filled {
+  background-color: $colorPrimary;
+  color: $colorLight;
+
+  &:hover {
+    background-color: $colorPrimary_opacity_1;
+  }
+
+  &:active {
+    background-color: $colorPrimary_shade_1;
+  }
+}
+
+.button,
+.button-filled {
+  transition: background-color $transitionTimePrimary linear;
+  cursor: pointer;
+}
+
+.button-icon {
+  margin-right: 10px;
+
+  &--plus {
+    width: 12px;
+    height: 12px;
+  }
+  &--back {
+    width: 16px;
+    height: 12px;
+  }
+  &--mail {
+    width: 20px;
+    height: 16px;
+  }
+}
+
+.active-section {
+  background-color: $colorPrimary__light;
+}
+
+.select {
+  &__button {
+    position: relative;
+    width: 100%;
+    padding-right: 25px;
+    padding-left: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid $colorPrimary;
+    text-align: left;
+  }
+
+  &__icon {
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    width: 10px;
+    height: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-50%);
+
+    &::after {
+      content: "";
+      border-top: 5px solid $colorSecondary;
+      border-right: 5px solid transparent;
+      border-left: 5px solid transparent;
+    }
+
+    &.open {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__list {
+    top: 43px;
+    left: 0;
+    padding: 10px 0;
+  }
+
+  &__item {
+    position: relative;
+    padding: 10px 16px;
+
+    &.focused {
+      background-color: $colorPrimary__light;
+    }
+
+    &.hover {
+      background-color: $colorPrimary__light;
+    }
+
+    &.selected {
+      &::after {
+        content: "";
+        position: absolute;
+        right: 25px;
+        width: 17px;
+        height: 8px;
+        display: inline-block;
+        border-bottom: 2px solid $colorSecondary;
+        border-left: 2px solid $colorSecondary;
+        transform: rotate(-45deg);
+      }
+    }
+
+    &.disabled {
+      opacity: 0.5;
+    }
+  }
+}
+
+.background-light {
+  background-color: $colorLight;
+}
+
+.background-grey_6 {
+  background-color: $colorGrey_6;
+}
+
+.background-grey__7 {
+  background-color: $colorGrey_7;
+}
+
+.box-shadow {
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+}
+
+.border-radius-50 {
+  border-radius: 50px;
+}
+.border-radius-7 {
+  border-radius: 7px;
+}
+
+.doted {
+  max-width: 100%;
+
+  &__ul {
+    max-width: 100%;
+    list-style: none;
+  }
+
+  &__li {
+    max-width: 100%;
+    display: flex;
+    align-items: flex-end;
+
+    &:not(:last-child) {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__name {
+    margin-right: auto;
+    padding-right: 10px;
+    display: inline-block;
+    font-family: "Work Sans";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 23px;
+  }
+
+  &__count {
+    position: relative;
+    min-width: max-content;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    font-family: "Work Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+
+    @media (max-width: 459px) {
+      width: max-content;
+      min-width: unset;
+      padding-left: 0px;
+    }
+
+    &.up::after,
+    &.down::after {
+      content: "";
+      position: absolute;
+      right: -25px;
+      display: inline-block;
+      border-top: 10px solid $colorSecondary;
+      border-right: 10px solid transparent;
+      border-left: 10px solid transparent;
+    }
+
+    &.up::after {
+      border-top-color: $colorSuccess;
+      transform: rotate(180deg);
+    }
+    &.down::after {
+      border-top-color: $colorWrong;
+    }
+  }
+
+  &__dots {
+    max-width: 100%;
+    display: inline-block;
+    overflow: hidden;
+    flex-grow: 1;
+
+    &::after {
+      content: "";
+      width: 100%;
+      overflow: hidden;
+      display: inline-block;
+      line-height: 14px;
+      border-bottom: 1px dashed #000;
+      color: #999;
+    }
+
+    &.up::after {
+      border-color: $colorSuccess;
+    }
+    &.down::after {
+      border-color: $colorWrong;
+    }
+  }
+}
+
+.ml-5 {
+  margin-left: 5px;
+}
+
+.filter {
+  &__blur {
+    filter: blur(10px);
+  }
+}
+
+.text {
+  &__error {
+    color: $colorWrong;
+  }
+}
+.skeleton {
+  &-animation {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(-45deg, $colorPrimary_opacity_2, $colorSecondary_3);
+    background-size: 350%;
+    animation: gradient 3s linear infinite;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: -20%;
+      width: 5px;
+      height: 200%;
+      transform: rotate(45deg) translateY(-20%);
+      filter: blur(10px);
+    }
+
+    &::before {
+      background-color: $colorPrimary_shade_1;
+      box-shadow: 0px 0px 20px $colorPrimary_shade_1;
+      animation: wave 7s linear infinite;
+    }
+
+    &::after {
+      background-color: $colorLight;
+      box-shadow: 0px 0px 20px $colorLight;
+      animation: wave 3s linear infinite;
+    }
+
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      20% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    @keyframes wave {
+      0% {
+        left: -20%;
+      }
+      100% {
+        left: 110%;
+      }
+    }
+  }
+
+  &-button {
+    background-color: $colorPrimary;
+  }
+}

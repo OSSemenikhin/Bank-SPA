@@ -1,0 +1,117 @@
+@import "../../styles/variables";
+
+.history-section {
+  padding: 25px 50px;
+  padding-bottom: 60px;
+
+  @media (max-width: 959px) {
+    padding: 25px 30px;
+  }
+}
+
+.history-table {
+  width: 100%;
+  // display: block;
+  border-collapse: collapse;
+
+  &__th,
+  &__td {
+    padding: 20px 50px;
+    text-align: left;
+    white-space: nowrap;
+
+    @media (max-width: 1199px) {
+      padding: 10px 20px;
+    }
+
+    @media (max-width: 959px) {
+      padding: 10px 10px;
+      font-size: 12px;
+      font-weight: 200;
+    }
+    @media (max-width: 767px) {
+      text-align: center;
+      &:nth-child(-n + 2) {
+        display: none;
+      }
+    }
+  }
+
+  &__th {
+    // display: block;
+    background: #116acc;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    color: $colorLight;
+
+    &:first-child {
+      // width: 280px;
+      border-top-left-radius: 15px;
+      border-bottom-left-radius: 15px;
+    }
+    // &:nth-child(2) {
+    //   width: 280px;
+    // }
+    // &:nth-child(3) {
+    //   width: 180px;
+    // }
+    // &:nth-child(4) {
+    //   width: 180px;
+    // }
+    &:last-child {
+      border-top-right-radius: 15px;
+      border-bottom-right-radius: 15px;
+    }
+
+    &:nth-child(3) {
+      @media (max-width: 575px) {
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+      }
+    }
+
+    @media (max-width: 1199px) {
+      font-size: 18px;
+      font-weight: 400;
+    }
+
+    @media (max-width: 767px) {
+      font-size: 14px;
+      font-weight: 200;
+    }
+  }
+
+
+  &__td {
+    border-bottom: 2px solid $colorGrey_opacity;
+
+    &._entering {
+      color: $colorSuccess;
+      &::before {
+        margin-right: 5px;
+        content: '+';
+      }
+    }
+    &._outgoing {
+      color: $colorWrong;
+      &::before {
+        margin-right: 5px;
+        content: '-';
+      }
+    }
+  }
+}
+
+.history-section-skeleton__subtitle {
+  width: 210px;
+  height: 25px;
+}
+
+.history-table-skeleton {
+  &__model {
+    width: 100%;
+    height: 25px;
+  }
+}

@@ -1,0 +1,3 @@
+dist/*.js
+js-advanced-diploma/**/*.js
+cypress/**/*.js

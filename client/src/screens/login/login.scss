@@ -1,0 +1,90 @@
+@import "../../styles/variables";
+
+.login {
+  width: 100vw;
+  height: calc(100vh - 194px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__form {
+    position: relative;
+    padding: 50px;
+    background-color: $colorGrey_7;
+    border-radius: 50px;
+
+    @media(max-width: 575px) {
+      padding: 35px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 35px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 40px;
+    text-align: center;
+
+    @media(max-width: 459px) {
+      font-size: 28px;
+    }
+  }
+
+  &__label {
+    width: 375px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: right;
+    color: $colorSecondary;
+
+    @media(max-width: 575px) {
+      width: 100%;
+    }
+
+    @media(max-width: 459px) {
+      flex-direction: column;
+      align-items: unset;
+      text-align: left;
+    }
+  }
+
+  &__name {
+    margin-right: 18px;
+    min-width: 58px;
+
+    @media(max-width: 959px) {
+      margin-right: 18px;
+    }
+
+    @media(max-width: 459px) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__input {
+    flex-grow: 1;
+
+    @media(max-width: 959px) {
+      flex-basis: 100%;
+    }
+  }
+
+  &__button {
+    padding: 14px 21px;
+  }
+
+  &__error {
+    position: absolute;
+    bottom: 25px;
+    right: 50px;
+    max-width: 50%;
+    color: $colorWrong;
+  }
+}

@@ -1,0 +1,27 @@
+@import "../../styles/variables";
+
+.history {
+  &__dynamic,
+  &__ratio {
+    margin-bottom: 50px;
+    padding-top: 26px;
+    padding-bottom: 19px;
+    padding-left: 100px;
+    padding-right: 20px;
+
+    @media(max-width: 1199px) {
+      padding-left: 50px;
+    }
+  }
+
+  &__chart {
+    height: 175px;
+  }
+}
+
+.history-skeleton {
+  &__subtitle {
+    width: 20%;
+    height: 25px;
+  }
+}
