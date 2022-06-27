@@ -91,7 +91,7 @@ npx cypress open
 ```js
 {
 	login: 'developer',
-	password: 'skillbox'
+	password: '12345'
 }
 ```
 
