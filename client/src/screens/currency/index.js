@@ -64,6 +64,8 @@ export const currencyPage = async (el) => {
     el('h2', { class: 'subtitle' }, 'Ваши валюты'),
     el('ul', { class: 'doted__ul' }, userCurrencyItems),
   ]);
+  
+  state.$form = operationForm(el);
 
   state.$summ.addEventListener('input', (event) => {
     event.target.value = event.target.value.replace(/[^0-9]/, '');
@@ -73,7 +75,6 @@ export const currencyPage = async (el) => {
     }
   });
 
-  state.$form = operationForm(el);
 
   state.$loading = addLoading(el, 'currency-operation');
   state.$success = addSuccess(el, 'currency-operation');
